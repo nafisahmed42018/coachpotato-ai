@@ -9,7 +9,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { GeneratedAvatar } from "@/components/generated-avatar";
-import { ChevronDownIcon, CreditCardIcon, LogOutIcon, Settings } from "lucide-react";
+import {
+  ChevronDownIcon,
+  CreditCardIcon,
+  LogOutIcon,
+  Settings,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import {
   Drawer,
@@ -51,7 +56,7 @@ export const DashboardUserButton = () => {
           {data.user.image ? (
             <Avatar className="size-9 mr-1">
               <AvatarImage src={data.user.image} />
-              {/* Implemento este Fallback para el caso de que aun existiendo la imagen no se cargue por alguna razón */}
+
               <AvatarFallback>
                 <GeneratedAvatar
                   seed={data.user.name}
@@ -89,7 +94,7 @@ export const DashboardUserButton = () => {
             </Button>
             <Button
               variant="outline"
-            //   onClick={() => authClient.customer.portal()}
+              //   onClick={() => authClient.customer.portal()}
             >
               Settings
               <Settings className="size-4" />
@@ -125,13 +130,13 @@ export const DashboardUserButton = () => {
 
         <div className="flex flex-col gap-0.5 text-left overflow-hidden flex-1 min-w-0">
           <p className="text-sm truncate w-full">{data.user.name}</p>
-          <p className="text-xs truncate w-full">{data.user.email}</p>
+          <p className="text-xs truncate w-full">{`Free Tier`}</p>
         </div>
 
         <ChevronDownIcon className="size-4 shrink-0" />
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="end" side="right" className="w-72">
+      <DropdownMenuContent align="end" side="top" className="w-72">
         <DropdownMenuLabel>
           <div className="flex flex-col gap-1">
             <span className="font-medium truncate">{data.user.name}</span>
